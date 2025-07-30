@@ -5,6 +5,7 @@
 #include <string>
 #include <algorithm>
 #include <system_error> 
+#include "extension.h"
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -114,8 +115,10 @@ public:
         }
 
         sigStream.close(); 
-
+        
         crawlDirectory(targetPath, signatures);
+        scan(targetPath);
+
     }
 };
 
